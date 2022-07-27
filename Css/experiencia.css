@@ -1,0 +1,115 @@
+.experiencia{
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+}
+
+.experiencia .subtitulo{
+  color: #e0e0e0
+}
+
+.experiencia-texto{
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 40ch; /*Cerca de 40 caracteres*/
+  margin-bottom: 60px;
+  color: #525252;
+}
+
+.experiencia-texto strong{
+  color: #141414;
+}
+
+.empresa{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  position: relative;
+  gap: 10px 20px; /*10 na vertical e 20 na horizontal*/
+}
+
+.empresa::before{
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#b6f829, #67dd8a);
+  position: absolute;
+  top: 20px;
+  left: -4px;
+}
+
+.empresa-ano{
+  position: absolute;
+  top:22px;
+  left: -100px;
+  color: #525252;
+  font-size: 0.875;
+  text-align: right; /*Está alinhando o texto a direita do elemento(pode imaginar o tamanho da caixa, que pode ser visivil com backgroun)*/
+  width: 80px; /*Por padrão a largura do elemento é o tamanho do conteudo(texto) e se alinhar ele assim nada acontece, por isso aumentamos o tamanho da largura, assim o elemento consegue ser alinhado a direita de sua caixa(que sem background fica invisivel)*/
+  /* background-color: blue; */
+}
+
+.empresa-titulo{
+  font-size: 1.125rem;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.empresa-texto{
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #525252;
+}
+
+
+.empresa-habilidade{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: start;
+}
+
+/*Fala com cada elemento li*/
+.empresa-habilidade li{
+  font-size: .875rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 5px 10px;
+}
+
+@media (max-width:90px){
+  .experiencia{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .experiencia .subtitulo{
+    color: #141414;
+  }
+
+  .experiencia-texto{
+    font-size: 1.25rem;
+  }
+
+  .empresa-ano{
+    position: initial; /*Voltar a ter o posicionamente referente ao grid, 1 elemento*/
+    order:1; /*Passa a ser o ultimo elemento do grid(é como se ele mudasse a posição do span do html para o ultimo item da div, viusalmente), pois nenhum dos outros elementos tem ordem definida, ou seja, são praticamente 0s, o 1 fica sendo o ultimo elemento */
+    width: initial;
+    text-align: left;
+  }
+}
+
+@media (max-width:400px){
+  .empresa{
+    grid-template-columns: 1fr;
+  }
+
+}
